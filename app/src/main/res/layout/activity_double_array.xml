@@ -5,14 +5,17 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent" android:layout_height="match_parent"
-            tools:context=".fundamentals.VowelCount">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fundamentals.DoubleArray">
+
 
         <EditText
-                android:id="@+id/edit_vowel"
+                android:id="@+id/edit_array"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:hint="text"
+                android:hint="array"
+                android:inputType="number"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -26,7 +29,8 @@
                 android:text="verify"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_vowel"/>
+                app:layout_constraintTop_toBottomOf="@id/edit_array"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

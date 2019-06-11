@@ -1,4 +1,4 @@
-package kata.academy.lln.fundamentals.vowelcount
+package kata.academy.lln.fundamentals
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import kata.academy.lln.R
 import kata.academy.lln.databinding.ActivityVowelCountBinding
-import kata.academy.lln.fundamentals.BaseActivity
 
 
 /**
