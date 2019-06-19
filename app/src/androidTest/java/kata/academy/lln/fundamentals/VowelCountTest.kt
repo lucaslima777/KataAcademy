@@ -1,4 +1,4 @@
-package kata.academy.lln.fundamentals.vowelcount
+package kata.academy.lln.fundamentals
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
