@@ -6,11 +6,11 @@ import org.junit.Test
 class SummationTest {
     @Test
     fun test1() {
-        assertEquals(1, Summation.GrassHopper.summation(1))
+        assertEquals(1, SummationFragment().summation(1))
     }
 
     @Test
     fun test2() {
-        assertEquals(36, Summation.GrassHopper.summation(8))
+        assertEquals(36, SummationFragment().summation(8))
     }
 }

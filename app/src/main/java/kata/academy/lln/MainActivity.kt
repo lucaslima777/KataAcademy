@@ -1,12 +1,21 @@
 package kata.academy.lln
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import kata.academy.lln.algorithms.NextNumberBigger
+import androidx.fragment.app.Fragment
+import kata.academy.lln.algorithms.NextNumberBiggerFragment
 import kata.academy.lln.databinding.ActivityMainBinding
+import kata.academy.lln.fundamentals.DoubleArrayFragment
+import kata.academy.lln.fundamentals.SummationFragment
+import kata.academy.lln.fundamentals.VowelCountFragment
 
-class MainActivity : AppCompatActivity() {
+/**
+ * @author lucas lima
+ * @since 11/06/2019
+ * @att 19/06/2019
+ */
+class MainActivity : AppCompatActivity(), BaseLauncher {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -14,10 +23,30 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.buttonVerify.setOnClickListener {
+        val fragment = getDoubleArray()
+        val fragmentManager = supportFragmentManager
+        val transaction = fragmentManager.beginTransaction()
 
-            val fragment = NextNumberBigger()
+        transaction.replace(R.id.fragment, fragment)
+        transaction.addToBackStack(null)
 
-        }
+        transaction.commit()
+
+    }
+
+    override fun getDoubleArray(): Fragment {
+        return DoubleArrayFragment()
+    }
+
+    override fun getSummation(): Fragment {
+        return SummationFragment()
+    }
+
+    override fun getVowelCount(): Fragment {
+        return VowelCountFragment()
+    }
+
+    override fun getNextNumberBigger(): Fragment {
+        return NextNumberBiggerFragment()
     }
 }
