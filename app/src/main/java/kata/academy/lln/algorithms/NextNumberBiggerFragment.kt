@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import kata.academy.lln.BaseActivity
 import kata.academy.lln.R
 import kata.academy.lln.databinding.FragmentNextNumberBiggerBinding
 
@@ -15,11 +16,27 @@ import kata.academy.lln.databinding.FragmentNextNumberBiggerBinding
  * @since 18/06/2019
  * @att 19/06/2019
  */
-class NextNumberBiggerFragment : Fragment() {
+class NextNumberBiggerFragment : Fragment(), BaseActivity {
 
     private lateinit var binding: FragmentNextNumberBiggerBinding
     private var number: Long = 0
 
+    override fun description() {
+        /**
+         * You have to create a function that takes a positive integer number and returns
+         * the next bigger number formed by the same digits:
+         *
+         * 12 ==> 21
+         * 513 ==> 531
+         * 2017 ==> 2071
+         *
+         * If no bigger number can be composed using those digits, return -1:
+         *
+         * 9 ==> -1
+         * 111 ==> -1
+         * 531 ==> -1
+         */
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
