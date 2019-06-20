@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), BaseLauncher {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val fragment = getDoubleArray()
+        val fragment = getNextNumberBigger()
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
 

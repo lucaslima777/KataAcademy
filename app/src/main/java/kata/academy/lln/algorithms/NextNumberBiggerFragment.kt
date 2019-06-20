@@ -13,10 +13,13 @@ import kata.academy.lln.databinding.FragmentNextNumberBiggerBinding
 /**
  * @author lucas lima
  * @since 18/06/2019
+ * @att 19/06/2019
  */
 class NextNumberBiggerFragment : Fragment() {
 
     private lateinit var binding: FragmentNextNumberBiggerBinding
+    private var number: Long = 0
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +32,27 @@ class NextNumberBiggerFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding.buttonVerify.setOnClickListener {
-            Toast.makeText(context, "test", Toast.LENGTH_LONG).show()
+            number = nextBiggerNumber(binding.editNum.text.toString().toLong())
+
+            Toast.makeText(
+                context, number.toString(), Toast.LENGTH_LONG
+            ).show()
         }
+    }
+
+    fun nextBiggerNumber(n: Long): Long {
+        val text = n.toString().toMutableList()
+        for (i in text.size - 2 downTo 0) {
+            if (text[i] < text[i + 1]) {
+                val tail = text.subList(i + 1, text.size)
+                val min = tail.withIndex().filter { it.value > text[i] }.minBy { it.value }!!
+                text[i + 1 + min.index] = text[i]
+                text[i] = min.value
+                tail.sort()
+                return text.joinToString("").toLong()
+            }
+        }
+        return -1
     }
 
 }
