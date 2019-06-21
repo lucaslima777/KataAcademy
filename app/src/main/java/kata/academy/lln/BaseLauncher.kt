@@ -11,4 +11,5 @@ interface BaseLauncher {
     fun getSummation(): Fragment
     fun getVowelCount(): Fragment
     fun getNextNumberBigger(): Fragment
+    fun getRgbToHexFragment(): Fragment
 }

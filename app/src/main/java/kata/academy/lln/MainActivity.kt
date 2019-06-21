@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import kata.academy.lln.algorithms.NextNumberBiggerFragment
+import kata.academy.lln.algorithms.RgbToHexFragment
 import kata.academy.lln.databinding.ActivityMainBinding
 import kata.academy.lln.fundamentals.DoubleArrayFragment
 import kata.academy.lln.fundamentals.SummationFragment
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity(), BaseLauncher {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val fragment = getNextNumberBigger()
+        val fragment = getRgbToHexFragment()
         val fragmentManager = supportFragmentManager
         val transaction = fragmentManager.beginTransaction()
 
@@ -48,5 +49,9 @@ class MainActivity : AppCompatActivity(), BaseLauncher {
 
     override fun getNextNumberBigger(): Fragment {
         return NextNumberBiggerFragment()
+    }
+
+    override fun getRgbToHexFragment(): Fragment {
+        return RgbToHexFragment()
     }
 }

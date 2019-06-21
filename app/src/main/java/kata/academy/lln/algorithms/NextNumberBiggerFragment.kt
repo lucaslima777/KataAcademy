@@ -61,11 +61,11 @@ class NextNumberBiggerFragment : Fragment(), BaseActivity {
         val text = n.toString().toMutableList()
         for (i in text.size - 2 downTo 0) {
             if (text[i] < text[i + 1]) {
-                val tail = text.subList(i + 1, text.size)
-                val min = tail.withIndex().filter { it.value > text[i] }.minBy { it.value }!!
+                val lastStr = text.subList(i + 1, text.size)
+                val min = lastStr.withIndex().filter { it.value > text[i] }.minBy { it.value }!!
                 text[i + 1 + min.index] = text[i]
                 text[i] = min.value
-                tail.sort()
+                lastStr.sort()
                 return text.joinToString("").toLong()
             }
         }
